@@ -319,6 +319,8 @@ class HybridSessionStore_Cookie extends HybridSessionStore_Base {
 	public function destroy($session_id) {
 		$this->currentCookieData = null;
 		Cookie::force_expiry($this->cookie);
+
+		return true;
 	}
 
 	public function gc($maxlifetime) {
